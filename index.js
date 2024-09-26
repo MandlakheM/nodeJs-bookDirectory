@@ -26,8 +26,37 @@ async function writeBooksFile(data) {
 }
 
 function validate(book) {
-    if(!book.bookTitle || ! book.author || !book.publisher || !book.publishedDate || !book.isbn){
-        return false
-    }
+  if (
+    !book.bookTitle ||
+    !book.author ||
+    !book.publisher ||
+    !book.publishedDate ||
+    !book.isbn
+  ) {
+    return false;
+  }
   return true;
 }
+
+const server = http.createServer(async (req, res) => {
+  if (req.url === "/" && req.method === "GET") {
+    res.writeHead(200, successHeaders);
+    res.end(console.log("current books"));
+  } else if (req.url === "/add_book" && req.method === "POST") {
+    res.writeHead(200, successHeaders);
+    res.end(console.log("add new book"));
+  } else if (req.url.startsWith === "/delete_book/" && req.method === "DELETE") {
+    res.writeHead(200, successHeaders);
+    res.end(console.log("delete  book"));
+  } else if (req.url.startsWith === "/update_book/" && req.method === "PUT") {
+    res.writeHead(200, successHeaders);
+    res.end(console.log("update book"));
+  } else {
+    res.writeHead(404, successHeaders);
+    res.end(JSON.stringify({ error: "Route not found" }));
+  }
+});
+
+server.listen(5001, () => {
+  console.log("server running on port 5001");
+});
