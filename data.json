@@ -5,5 +5,19 @@
     "publisher": "slaughter house",
     "publishedDate": "2994-09-26",
     "isbn": "1234567890"
+  },
+  {
+    "bookTitle": "the cook book",
+    "author": "Gordan",
+    "publisher": "Top cheff",
+    "publishedDate": "2023-01-30",
+    "isbn": "12345670"
+  },
+  {
+    "bookTitle": "foundational React",
+    "author": "Zack",
+    "publisher": "genius minds",
+    "publishedDate": "2024-08-11",
+    "isbn": "1234"
   }
 ]
