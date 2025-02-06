@@ -44,3 +44,55 @@ cd projectname
 npm install
 
 # node index.js
+```
+
+## How to Use
+
+Use post man.
+
+1. Get All Books
+
+Endpoint: GET /
+
+Response: Returns a list of all books in JSON format.
+
+Example Request: http://localhost:5001
+
+
+
+
+2. Add a New Book
+
+Endpoint: POST /add_book
+
+Request Body: JSON object with book details (bookTitle, author, publisher, publishedDate, isbn).
+
+Response: Returns the newly added book.
+
+Example Request: http://localhost:5001/add_book
+
+{"bookTitle": "Node.js Basics", "author": "John Doe", "publisher": "Tech Press", "publishedDate": "2023-01-01", "isbn": "1234567890"}
+
+
+
+3. Update a Book
+
+Endpoint: PUT /update_book/:isbn
+
+Request Body: JSON object with updated book details.
+
+Response: Returns the updated book.
+
+Example Request: http://localhost:5001/update_book/1234567890 
+
+{"bookTitle": "Updated Node.js Basics", "author": "John Doe", "publisher": "Tech Press", "publishedDate": "2023-02-01", "isbn": "1234567890"}
+
+
+
+4. Delete a Book
+
+Endpoint: DELETE /delete_book/:isbn
+
+Response: Returns a confirmation message.
+
+Example Request: http://localhost:5001/delete_book/1234567890
